@@ -18,9 +18,16 @@ PROFIT_THRESHOLD_PCT = float(os.getenv("PROFIT_THRESHOLD_PCT", "0.7"))
 TRADE_FEE_PCT = float(os.getenv("TRADE_FEE_PCT", "0.2"))
 
 WATCH = {
-    "BTC/USDT": ["binance", "kucoin", "bybit"],
-    "ETH/USDT": ["binance", "kucoin", "bybit"],
+    "BTC/USDT": ["kucoin", "gateio", "mexc"],
+    "ETH/USDT": ["kucoin", "gateio", "mexc"],
 }
+
+EXCHANGE_CLASSES = {
+    "kucoin": ccxt.kucoin,
+    "gateio": ccxt.gateio,
+    "mexc": ccxt.mexc,
+}
+
 
 EXCHANGE_CLASSES = {
     "binance": ccxt.binance,
